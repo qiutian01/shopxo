@@ -44,13 +44,17 @@ export default function handler(req, resp) {
 	        res.on('end', (e) => {
 	            console.log('responseHeader',res.headers)
 	            console.log('response',result)
-	           for(var key in res.headers){
+	           /*for(var key in res.headers){
 	                resp.setHeader(key, res.headers[key])
 	            }
 				resp.flushHeaders();
 			console.log('responseHeaders',resp.headers);
 	        
-	            resp.send(result);
+	            resp.send(result);*/
+				
+				resp
+				  .writeHead(res.statusCode, res.headers)
+				  .end(result);
 	    
 	    	
 	        });
