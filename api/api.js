@@ -61,7 +61,7 @@ export default function handler(req, resp) {
 	        resp.setHeader('content-type', 'application/json')
 	        resp.send(JSON.stringify(e))
 	    });
-	    if(params.method=='POST'){
+	    if(req.method=='POST'){
 	        myreq.write(body);
 	    }
 	    
