@@ -47,7 +47,8 @@ export default function handler(req, resp) {
 	           for(var key in res.headers){
 	                resp.setHeader(key, res.headers[key])
 	            }
-			console.log('responseHeaders',res.headers);
+				resp.flushHeaders();
+			console.log('responseHeaders',resp.headers);
 	        
 	            resp.send(result);
 	    
