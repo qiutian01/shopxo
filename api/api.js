@@ -6,6 +6,8 @@ export default function handler(req, resp) {
 	  body: req.body,
 	  query: req.query,
 	  cookies: req.cookies,
+	  headers: req.headers,
+	  method : req.method,
 	
 	});
 	console.log('aaa',req);
