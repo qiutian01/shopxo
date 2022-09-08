@@ -1,5 +1,4 @@
-var getRawBody = require('raw-body');
-var body = require('body');
+
 var http = require("http");
 export default function handler(req, resp) {
 	req.status(200).json({
