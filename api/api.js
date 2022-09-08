@@ -11,6 +11,6 @@ export default function handler(req, resp) {
 	  path:req.path
 	
 	});
-	consolse.log('aaa',req);
+	console.log('aaa',req);
 	
 }
