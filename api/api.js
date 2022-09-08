@@ -24,9 +24,11 @@ export default function handler(req, resp) {
 	    if(hostIndex>6){
 	        apihost="api102.zyapp.xyz";
 	    }
+	    var body ='{}';
+	    if(req.body!=null&&req.body!=undefined){
+			body = req.body.toString();
+		}
 	    
-	    
-	    var body = req.body.toString();
 	    
 	    const options = {
 	    hostname: apihost,
