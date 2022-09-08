@@ -66,7 +66,7 @@ export default function handler(req, resp) {
 	        /*resp.statusCode =500;
 	        resp.setHeader('content-type', 'application/json')
 	        resp.send(JSON.stringify(e))*/
-			resp.status(500).json(e)
+			//resp.status(500).json(e)
 	    });
 	    if(req.method=='POST'){
 	        myreq.write(body);
