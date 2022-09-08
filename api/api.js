@@ -7,8 +7,10 @@ export default function handler(req, resp) {
 	  cookies: req.cookies,
 	  headers: req.headers,
 	  method : req.method,
+	  url:req.url,
+	  path:req.path
 	
 	});
-	console.log('aaa',req);
+	consolse.log('aaa',req);
 	
 }
