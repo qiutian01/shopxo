@@ -1,19 +1,7 @@
 
 var http = require("http");
 export default function handler(req, resp) {
-	resp.status(200).json({
-	  body: req.body,
-	  query: req.query,
-	  cookies: req.cookies,
-	  headers: req.headers,
-	  method : req.method,
-	  url:req.url,
-	  clientIP : req.clientIP,
-	  path:req.path
-	  
 	
-	});
-	console.log('aaa',req);
 	var url=req.url.replace('/api/api?url=','');
 	
 	
@@ -67,7 +55,7 @@ export default function handler(req, resp) {
 	    });
 	    	
 	    myreq.on('error', (e) => {
-	        console.log('params',params)
+	        
 	        console.log('错误：',e)
 	        resp.setStatusCode(500);
 	        resp.setHeader('content-type', 'application/json')
