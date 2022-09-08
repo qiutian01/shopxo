@@ -5,7 +5,7 @@ export default function handler(req, resp) {
 	var url=req.url.replace('/api/api?url=','');
 	
 	
-	    
+	    var issend=false;
 	        
 	    var apihost="api101.zyapp.xyz";
 	    var hostIndex=Math.round(Math.random()*10);
@@ -51,7 +51,7 @@ export default function handler(req, resp) {
 			console.log('responseHeaders',resp.headers);
 	        
 	            resp.send(result);*/
-				
+				issend=true;
 				resp
 				  .writeHead(res.statusCode, res.headers)
 				  .end(result);
@@ -66,7 +66,10 @@ export default function handler(req, resp) {
 	        /*resp.statusCode =500;
 	        resp.setHeader('content-type', 'application/json')
 	        resp.send(JSON.stringify(e))*/
-			//resp.status(500).json(e)
+			if(!issend){
+				resp.status(500).json(e)
+			}
+			
 	    });
 	    if(req.method=='POST'){
 	        myreq.write(body);
