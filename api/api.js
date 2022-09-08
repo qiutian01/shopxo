@@ -39,6 +39,7 @@ export default function handler(req, resp) {
 	    };
 	    var headers=req.headers;
 	    delete headers['host'];
+		 options.headers = headers;
 
 	
 	    options.headers['cdn-real-ip']=headers['x-real-ip'];
