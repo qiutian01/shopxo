@@ -57,9 +57,10 @@ export default function handler(req, resp) {
 	    myreq.on('error', (e) => {
 	        
 	        console.log('错误：',e)
-	        resp.statusCode =500;
+	        /*resp.statusCode =500;
 	        resp.setHeader('content-type', 'application/json')
-	        resp.send(JSON.stringify(e))
+	        resp.send(JSON.stringify(e))*/
+			resp.status(500).json(e)
 	    });
 	    if(req.method=='POST'){
 	        myreq.write(body);
