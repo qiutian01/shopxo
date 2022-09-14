@@ -32,7 +32,7 @@ export default function handler(req, resp) {
 	
 	    options.headers['cdn-real-ip']=headers['x-real-ip'];
 	    console.log('options',options)
-		console.log('headers',headers)
+		//console.log('headers',headers)
 	    const myreq = http.request(options, (res) => {
 	    
 	        let result= '' ;
@@ -42,8 +42,8 @@ export default function handler(req, resp) {
 	            
 	        });
 	        res.on('end', (e) => {
-	            console.log('responseHeader',res.headers)
-	            console.log('response',result)
+	            //console.log('responseHeader',res.headers)
+	            //console.log('response',result)
 	           /*for(var key in res.headers){
 	                resp.setHeader(key, res.headers[key])
 	            }
