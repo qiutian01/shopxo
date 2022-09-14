@@ -1,7 +1,7 @@
 
 var http = require("http");
 export default function handler(req, resp) {
-	console.log('url',req.url);
+	console.log('url',decodeURIComponent(req.url));
 	var url=req.url.replace('/api/api?url=','');
 	
 	
